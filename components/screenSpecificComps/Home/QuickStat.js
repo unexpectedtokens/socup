@@ -22,25 +22,30 @@ const Progress = styled.View`
   width: 100%;
   height: 15px;
   border-radius: 5px;
-  background: #ff005d;
-  transform: translateY(${props => (props.color ? "-50px" : 0)});
+  background: ${props => (!props.container ? "#ff005d" : "#FF89B5")};
+  margin-bottom: 20px;
 `;
 export default props => {
-  const [showColor, toggle] = useState(false);
+  const percentage =
+    props.user.level.level !== 10
+      ? (props.user.experience / props.user.level.xpNeededForNextLevel) * 100
+      : 100;
+
   return (
-    <Card>
+    <Card delay="300">
       <QuickStat>
         <Level>
           <Text style={{ color: "#ff005d", fontSize: 15 }}>lvl</Text>
-          <Text style={{ color: "#ff005d", fontSize: 30 }}>{props.level}</Text>
+          <Text style={{ color: "#ff005d", fontSize: 30 }}>
+            {props.user.level.level}
+          </Text>
         </Level>
-        <Button
-          title="Continue &rarr;"
-          onPress={e => toggle(cur => !cur)}
-          color="#ff005d"
-        />
       </QuickStat>
-      <Progress color={showColor ? true : false} />
+
+      <Progress container>
+        <Progress style={{ width: `${percentage}%` }} />
+      </Progress>
+      <Button title="Continue &rarr;" onPress={props.Clicked} color="#ff005d" />
     </Card>
   );
 };

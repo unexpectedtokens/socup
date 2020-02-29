@@ -45,7 +45,7 @@ const TrophieComp = props => {
 
 export default props => {
   return (
-    <Card>
+    <Card delay="500">
       <TrophiesContainer>
         <TrophieComp completed />
         <TrophieComp />
