@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components/native";
 const Welcome = styled.View`
   flex: 1;
-  padding: 200px 0 50px;
+  padding: 200px 0 80px;
   background: #ff005d;
   margin-bottom: 20px;
   border-radius: 10px;
@@ -23,7 +23,7 @@ export default props => {
       <WelcomeText style={{ fontSize: 20, color: "#f0f0f0" }}>
         Hello,
       </WelcomeText>
-      <WelcomeText>Welcome {props.userName || "user"}</WelcomeText>
+      <WelcomeText>Welcome {props.name || "user"}</WelcomeText>
     </Welcome>
   );
 };
