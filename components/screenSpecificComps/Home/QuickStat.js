@@ -34,13 +34,13 @@ export default props => {
           <Text style={{ color: "#ff005d", fontSize: 15 }}>lvl</Text>
           <Text style={{ color: "#ff005d", fontSize: 30 }}>{props.level}</Text>
         </Level>
-        <Button
-          title="Continue &rarr;"
-          onPress={e => toggle(cur => !cur)}
-          color="#ff005d"
-        />
       </QuickStat>
       <Progress color={showColor ? true : false} />
+      <Button
+        title="Continue &rarr;"
+        onPress={e => toggle(cur => !cur)}
+        color="#ff005d"
+      />
     </Card>
   );
 };
