@@ -33,10 +33,10 @@ const TrophieComp = props => {
             fontSize: 20
           }}
         >
-          getting started
+          {props.title}
         </Text>
         <Text style={{ color: "#FFA5C4", textTransform: "capitalize" }}>
-          reach level 2
+          {props.goal}
         </Text>
       </View>
     </Trophie>
@@ -47,12 +47,14 @@ export default props => {
   return (
     <Card delay="500">
       <TrophiesContainer>
-        <TrophieComp completed />
-        <TrophieComp />
-        <TrophieComp />
-        <TrophieComp />
-        <TrophieComp />
-        <TrophieComp />
+        {props.trophies.map(troph => (
+          <TrophieComp
+            goal={troph.goal}
+            title={troph.title}
+            completed={troph.reached === true}
+            key={troph.title}
+          />
+        ))}
       </TrophiesContainer>
     </Card>
   );

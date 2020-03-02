@@ -11,16 +11,41 @@ export default {
     { level: 9, xpNeededForNextLevel: 300 },
     { level: 10, xpNeededForNextLevel: 300 }
   ],
-  trophies: [],
+  trophies: [
+    {
+      title: "Getting started",
+      goal: "Reach level 2",
+      reached: "newState.user.level.level >= 2"
+    },
+    {
+      title: "Interaction is fun!",
+      goal: "Reach level 10",
+      reached: "newState.user.level.level >= 10"
+    },
+    {
+      title: "You madman!",
+      goal: "Complete 500 challenges",
+      reached: "newState.user.ChallengesComplete >= 500"
+    }
+  ],
   challenges: [
     {
       level: 1,
       challenge:
         "Go to the grocery store and ask where you can find a product of choice, just make something up"
     },
-    { level: 3, challenge: "give 3 people a compliment of choice" }
+    { level: 1, challenge: "Ask someone what time it is" },
+    { level: 1, challenge: "give 3 people a compliment of choice" }
   ],
   modifiers: [
-    "At least one of the persons you talk to has to be of the opposite sex"
+    "At least one of the persons you talk to has to be of the opposite sex",
+    "They have to be different",
+    "lorem ipsym",
+    "loras quroe",
+    "loras quroa",
+    "loras quroi",
+    "loraquroe",
+    "lor quroe",
+    "lorassarol quroe"
   ]
 };

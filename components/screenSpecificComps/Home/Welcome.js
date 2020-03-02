@@ -9,9 +9,9 @@ const Welcome = styled.View`
   transform: rotate(45deg);
   justify-content: center;
   align-items: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 `;
 const WelcomeText = styled.Text`
-  font-size: 18px;
   color: #fff;
   font-size: 30px;
   transform: rotate(-45deg);
@@ -23,7 +23,7 @@ export default props => {
       <WelcomeText style={{ fontSize: 20, color: "#f0f0f0" }}>
         Hello,
       </WelcomeText>
-      <WelcomeText>Welcome {props.name || "user"}</WelcomeText>
+      <WelcomeText>{props.name || "user"}</WelcomeText>
     </Welcome>
   );
 };

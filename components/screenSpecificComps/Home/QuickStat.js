@@ -1,7 +1,9 @@
 import styled from "styled-components/native";
 import React, { useState } from "react";
-import { Text, Button } from "react-native";
+import { Text, View } from "react-native";
 import Card from "../../UI/Card";
+import Button from "../../UI/Button";
+
 const Level = styled.View`
   width: 90px;
   height: 90px;
@@ -10,20 +12,24 @@ const Level = styled.View`
   border: 5px solid #ff005d;
   border-radius: 50px;
   flex-direction: row;
+  margin-right: 10px;
 `;
 const QuickStat = styled.View`
   flex-direction: row;
   flex-grow: 1;
-  margin-bottom: 20px;
-  align-items: flex-end;
-  justify-content: flex-start;
+  margin-bottom: 40px;
+  align-items: center;
+  justify-content: center;
 `;
 const Progress = styled.View`
-  width: 100%;
   height: 15px;
-  border-radius: 5px;
+  border-radius: 50px;
   background: ${props => (!props.container ? "#ff005d" : "#FF89B5")};
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+`;
+const StyledText = styled.Text`
+  color: ${props => props.theme.mainColor};
+  font-size: 15px;
 `;
 export default props => {
   const percentage =
@@ -40,12 +46,21 @@ export default props => {
             {props.user.level.level}
           </Text>
         </Level>
+        <View>
+          <StyledText>You have completed</StyledText>
+          <StyledText>
+            <Text style={{ fontSize: 20, fontWeight: "bold" }}>
+              {props.user.ChallengesComplete}
+            </Text>{" "}
+            challenges
+          </StyledText>
+        </View>
       </QuickStat>
 
       <Progress container>
         <Progress style={{ width: `${percentage}%` }} />
       </Progress>
-      <Button title="Continue &rarr;" onPress={props.Clicked} color="#ff005d" />
+      <Button Text="Continue &rarr;" Clicked={props.Clicked} color="#ff005d" />
     </Card>
   );
 };
